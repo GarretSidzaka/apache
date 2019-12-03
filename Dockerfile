@@ -5,6 +5,10 @@ VOLUME ["/var/www"]
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
+    mkdir /etc/apache2/ssl && \
+    mkdir /etc/apache2/ssl/private && \
+    chmod 755 /etc/apache2/ssl && \
+    chmod 710 /etc/apache2/ssl/private && \
     apt-get install -y \
       apache2 \
       php7.0 \
@@ -24,10 +28,6 @@ RUN apt-get update && \
       php7.0-zip \
       php7.0-soap \
       php7.0-opcache \
-      sudo mkdir /etc/apache2/ssl \
-      sudo mkdir /etc/apache2/ssl/private \
-      sudo chmod 755 /etc/apache2/ssl \
-      sudo chmod 710 /etc/apache2/ssl/private \
       composer
 
 COPY run /usr/local/bin/run
