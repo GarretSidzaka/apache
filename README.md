@@ -11,15 +11,17 @@ Tags
 Usage
 ------
 
-```
-$ docker run -d -P bylexus/apache-php7
-```
+Clone the http_config and/or https_config apache configs to create your virtual host settings as per standard conventions.
 
-With all the options:
+Make sure that you put all of your virtual hosts in separate webfolders in the `/home/user/vhosts` folder and point to them in the apache configs.
+
 
 ```bash
 $ docker run -d -p 8080:80 \
-    -v /home/user/webroot:/var/www \
+    -v /home/user/http_config:/etc/apache2/sites-available/000-default \
+    -v /home/user/https_config:/etc/apache2/sites-available/default-ssl \
+    -v /home/user/crypto:/etc/apache2/ssl \
+    -v /home/user/vhosts:/var/www \
     -e PHP_ERROR_REPORTING='E_ALL & ~E_STRICT' \
     bylexus/apache-php7
 ```
