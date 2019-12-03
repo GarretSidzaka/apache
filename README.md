@@ -6,7 +6,7 @@ A Docker image based on Ubuntu, serving PHP 7 running as Apache Module. Useful f
 Tags
 -----
 
-* latest: Ubuntu 16.04 (LTS), Apache 2.4, PHP 7.0.x with support for setting `error_reporting`
+* latest: Ubuntu (LTS), Apache 2.4, PHP 7.0.x with support for setting `error_reporting`
 
 Usage
 ------
@@ -42,7 +42,7 @@ Apache is configured to log both access and error log to STDOUT. So you can simp
 
 Installed packages
 -------------------
-* Ubuntu Server 16.04, based on ubuntu docker image
+* Ubuntu Server, based on ubuntu docker image
 * apache2
 * php7.0
 * php7.0-cli
