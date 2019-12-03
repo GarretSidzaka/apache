@@ -66,7 +66,6 @@ Installed packages
 Default Configurations
 ----------------------
 
-* Apache: .htaccess-Enabled in webroot (mod_rewrite with AllowOverride all)
 * php.ini:
   * display_errors = On
   * error_reporting = E_ALL (default, overridable per env variable)
