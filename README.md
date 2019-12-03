@@ -23,11 +23,14 @@ $ docker run -d -p 8080:80 \
     -v /home/user/crypto:/etc/apache2/ssl \
     -v /home/user/vhosts:/var/www \
     -e PHP_ERROR_REPORTING='E_ALL & ~E_STRICT' \
-    bylexus/apache-php7
+    GarretSidzaka/vhost-apache-php7
 ```
 
-* `-v [local path]:/var/www` maps the container's webroot to a local path
-* `-p [local port]:80` maps a local port to the container's HTTP port 80
+* `-v [local path]:/etc/apache2/sites-available/000-default` maps the custom apache config to container's apache directory
+* `-v [local path]://etc/apache2/sites-available/default-ssl` maps the custom SSL apache config to container's apache directory
+* `-v [local path]:/etc/apache2/ssl` maps the containers ssl keys to your keystore, be sure to make sub folder for private
+* `-v [local path]:/var/www` maps the container's webroot to a folder where you keep your virtual hosts'sites
+* `-p [local port]:80` maps a local port to the container's HTTP port 80, alternatively you may map 443 if using TLS
 * `-e PHP_ERROR_REPORTING=[php error_reporting settings]` sets the value of `error_reporting` in the php.ini files.
 
 ### Access apache logs
