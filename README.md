@@ -26,12 +26,6 @@ $ docker run -d -p 8080:80 \
 * `-p [local port]:80` maps a local port to the container's HTTP port 80, alternatively you may map 443 if using TLS
 
 
-### Access apache logs
-
-Apache is configured to log both access and error log to STDOUT. So you can simply use `docker logs` to get the log output:
-
-`docker logs -f container-id`
-
 
 
 
